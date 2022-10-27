@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var myLabel: UILabel!
     
+    @IBOutlet weak var textField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,10 @@ class ViewController: UIViewController {
         
        //Part 4:3 set label text
        myLabel.text = "My Segmented Control"
+        
+        //In the func viewDidLoad, add this line of code so that no indexes are selected when the app first launches:
+        segmentedControl.selectedSegmentIndex = -1
+
         
     }
 
@@ -34,18 +40,21 @@ class ViewController: UIViewController {
         switch segmentedControl.selectedSegmentIndex{
         case 0:
             myLabel.text = "First Segment has been Selected"
+            self.myLabel.text = textField.text
         case 1:
             myLabel.text = "Second Segment has been Selected"
+            self.myLabel.text = textField.text
+        case 2:
+            myLabel.text = "Woohoo, this makes sense now!!"
+            self.myLabel.text = textField.text
         default:
             break
             
-            //We’ve created a switch statement with two different cases (case 0 and case 1). Please note that the numbers 0 and 1 correlate directly to the index that is selected in the segmented control.
-
+            
+//Problem set one: add a third segment and set label
+//Problem set two: display input text in Label for all indexes (1.Set up IB action to display user input text; 2.set the display label to display the text the user inputs self.myLabel.text = textField.text)
+            
         }
-        
-        
-        
-        
         
     }
     
